@@ -1,0 +1,32 @@
+body{
+ text-align: center !important;
+}
+#final{
+ width: 25rem;
+ height: 20rem;
+ overflow: hidden;
+ margin: auto;
+ display: block;
+}
+.picture{
+ width: 25rem;
+ height: 20rem;
+ margin: auto;
+}
+
+.imgContainer{
+ overflow: hidden;
+ float: left;
+ width: 12.5rem;
+ height: 10rem;
+}
+.imgContainer > img{
+ height: 20rem;
+ width: 25rem;
+ margin-left: -12.5rem;
+ margin-top: -10rem;
+}
+
+#drop-zone > .imgContainer{
+ border-style: solid;
+}
