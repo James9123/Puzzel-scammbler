@@ -14,8 +14,6 @@ function randomize(puzzle) {
     puzzle[i] = temp;
   }
 }
-
-
 function init(){
 $("h1").html("Solve the puzzle!")
 $("#final").hide()
@@ -47,9 +45,36 @@ puzzle.forEach(function(piece){
   });
 
 
-$("#pieces>.imgContainer").draggable()
-}
+$("#pieces > .imgContainer").draggable();
 
+ $("#drop-zone > .imgContainer").droppable({
+ drop: function(event, ui){
+var destNum = $(this).attr("class").split(" ")[0];
+ var pieceNum = ui.draggable.attr("class").split(" ")[0];
+ if (destNum === pieceNum){
+ $(this).append(ui.draggable.find("img"))
+ .css("border-style", "none");
+ ui.draggable.addClass("invisible");
+ count ++;
+ 
+$("#drop-zone").click(function(){
+  $(".picture").empty();
+  $("#drop-zone").empty()
+  init()
+})
+
+
+ }else{
+  $(this).css({"background-color":"red"});
+ ui.draggable.css({
+ "border": ".1rem solid red"
+ });
+ }
+ }
+ });
+
+
+}
 
 $(document).ready(function(){
 $("#final").click(init)
