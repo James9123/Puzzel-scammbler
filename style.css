@@ -1,5 +1,6 @@
 body{
  text-align: center !important;
+ background-color: red;
 }
 #final{
  width: 25rem;
@@ -29,4 +30,8 @@ body{
 
 #drop-zone > .imgContainer{
  border-style: solid;
+}
+
+h1 {
+  color: chartreuse;
 }
