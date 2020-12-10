@@ -15,9 +15,10 @@ function randomize(puzzle) {
   }
 }
 function init(){
-$("h1").html("Solve the puzzle!")
-$("#final").hide()
-
+$("h1").html("Solve the Puzzle!");
+var total = rows*columns;
+ var count = 0;
+  $("#final").hide();
 var puzzle = []
 
 for(var i = 0;i<rows;i++){
@@ -56,24 +57,33 @@ var destNum = $(this).attr("class").split(" ")[0];
  .css("border-style", "none");
  ui.draggable.addClass("invisible");
  count ++;
- 
+
+  if (count === total){
+ $("h1").html("Great Job! Click Image To Replay");
 $("#drop-zone").click(function(){
   $(".picture").empty();
   $("#drop-zone").empty()
   init()
 })
 
+ }
+
+
 
  }else{
   $(this).css({"background-color":"red"});
+  
  ui.draggable.css({
+   
  "border": ".1rem solid red"
  });
  }
  }
  });
 
-
+/*var attributes = $("#classdemo").attr("class").split(" ")
+console.log(attributes[3])
+*/
 }
 
 $(document).ready(function(){
